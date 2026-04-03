@@ -1,6 +1,33 @@
 # Real GitHub Project Structure
 
-### flask-voting-app
+
+#### Multi-Container Flask Voting App Architecture
+
+You will deploy 5 containers — this is why it's powerful.
+
+```bash
+Frontend → Flask Voting UI
+Worker → Python Worker
+Redis → Message Queue
+PostgreSQL → Database
+Result App → Shows Results
+```
+```bash
+Flow:
+
+User Vote
+    ↓
+Flask Frontend
+    ↓
+Redis Queue
+    ↓
+Worker Container
+    ↓
+PostgreSQL Database
+    ↓
+Result App Displays Output
+```
+This shows real microservices thinking.
 
 ```bash
 aws-flask-voting-devops-project/
